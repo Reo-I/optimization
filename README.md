@@ -1,9 +1,13 @@
 # optimization
 Minimize the following problem:
+
+
+
 $$
-\underset{\mathbf{w}\in\mathbb{R}^n}{min} f(\mathbf{w}):=||\mathbf{b} - \mathbf{A}\mathbf{w}||^2 + \lambda||\mathbf{w}||^2, 
+\underset{\mathbf{w}\in\mathbb{R}^n}{min} f(\mathbf{w}) := || \mathbf{b} - \mathbf{A}\mathbf{w}||^2 + \lambda||\mathbf{w}||^2
 $$
-where $\mathbf{A}\in\mathbb{R}^{m\times n}, \mathbf{b}\in\mathbb{R}^m, \lambda \in \mathbb{R}, m<n$.
+
+where $\mathbf{A}\in\mathbb{R}^{m\times n}, \mathbf{b}\in\mathbb{R}^m, \lambda \in \mathbb{R}$ , and $m　<　n$ .
 
 First of all, for the problem setting, $\mathbf{A}, \mathbf{w}$ are randomly generated, and using these generated matrix, $\mathbf{b}$ is calcurated as follows:
 
