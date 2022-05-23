@@ -1,7 +1,11 @@
 import numpy as np
 import scipy
 import matplotlib.pyplot as plt
+import argparse
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--solve_type', type=int, default='0')
+args = parser.parse_args()
 
 class Minimization:
     def __init__(self, m=10, n=20, lams = [0,  0.1,1,  10], opt_type = ["l_smooth"]*4, num_iter = 30):
@@ -88,24 +92,23 @@ class Minimization:
         plt.savefig(f"img/{save_path}_small.png")
         plt.show()
 
-if __name__ == "__main__": 
-    #L-smooth, optimization
-    do_min = Minimization( lams = [0, 0.1, 1, 10], opt_type=["l_smooth"]*4, num_iter = 30)
-    do_min.minize()
-    do_min.visualize(save_path = "q1_steepest_descent")
+if __name__ == "__main__":
+    if args.solve_type == 0:
+        #L-smooth, optimization
+        do_min = Minimization( lams = [0, 0.1, 1, 10], opt_type=["l_smooth"]*4, num_iter = 30)
+        do_min.minize()
+        do_min.visualize(save_path = "q1_steepest_descent")
 
 
-    """
-    #armijo's rule
-    do_min = Minimization( lams = [0.5, 0.5, 1, 1], opt_type=["l_smooth", "armijo"]*2, num_iter = 30)
-    do_min.minize()
-    do_min.visualize(save_path = "q2_L_smooth_armijo")
-    """
+    elif args.solve_type == 1:
+        #armijo's rule
+        do_min = Minimization( lams = [0.5, 0.5, 1, 1], opt_type=["l_smooth", "armijo"]*2, num_iter = 30)
+        do_min.minize()
+        do_min.visualize(save_path = "q2_L_smooth_armijo")
+    
 
-
-    """
-    #Nesterov's accelerated gradient algorithm
-    do_min = Minimization( lams = [0.5, 0.5,  2, 2], opt_type=["l_smooth", "nesterov"]*2, num_iter = 60)
-    do_min.minize()
-    do_min.visualize(save_path = "q3_L_smooth_nesterov")
-    """
+    elif args.solve_type == 2:
+        #Nesterov's accelerated gradient algorithm
+        do_min = Minimization( lams = [0.5, 0.5,  2, 2], opt_type=["l_smooth", "nesterov"]*2, num_iter = 60)
+        do_min.minize()
+        do_min.visualize(save_path = "q3_L_smooth_nesterov")
