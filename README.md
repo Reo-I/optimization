@@ -17,7 +17,7 @@ $$
 
 # Usage
  
-### optimize the $f(\mathbf{w})$ 
+optimize the $f(\mathbf{w})$ 
  
 ```bash
 $ git clone git@github.com:Reo-I/optimization.git
