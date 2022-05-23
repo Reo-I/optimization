@@ -1,8 +1,6 @@
 # optimization
 Minimize the following problem:
 
-
-
 $$
 \underset{\mathbf{w}\in\mathbb{R}^n}{min} f(\mathbf{w}) := || \mathbf{b} - \mathbf{A}\mathbf{w}||^2 + \lambda||\mathbf{w}||^2
 $$
